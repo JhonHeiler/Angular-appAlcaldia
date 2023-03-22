@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-header">
+  
+     <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-contratos/">Agregar nuevo contratos</a>
+    </div>
+    <div class="card-body">
+      <h2>Lista contratos 🥳</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>CODIGO</th>
+            <th>objeto</th>
+            <th>valor</th>
+            <th>secretaria</th>
+            <th>ano_de_contrato</th>
+            <th>cdp</th>
+            <th>rp</th>
+            <th>Codigo de persona</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contratos of contratoss; let iControl=index">
+            <td>{{contratos.id_contratos}}</td>
+            <td>{{contratos.objeto}}</td>
+            <td>{{contratos.valor}}</td>
+            <td>{{contratos.secretaria}}</td>
+            <td>{{contratos.ano_de_contrato}}</td>
+            <td>{{contratos.cdp}}</td>
+            <td>{{contratos.rp}}</td>
+            <td>{{contratos.id_persona}}</td>
+            <td>
+               <a *ngIf="puedeModificar" class="btn btn-info" routerLink="/Edit-contratos/{{contratos.id_contratos}}">Editar</a>
+              <a *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletecontratos(contratos.id_contratos,iControl)" role="button">Borrar</a> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  </div>
+  

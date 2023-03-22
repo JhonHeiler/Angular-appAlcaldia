@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-header">
+      Registrar contratos
+    </div>
+    <div class="card-body">
+      <form ngNativeValidate [formGroup]="formcontratos" (ngSubmit)="enviarDatos()">
+     <div class="mb-3">
+       <label for="" class="form-label">contratos</label>
+       <input required type="text"
+         class="form-control" name="" id="" formControlName="objeto" aria-describedby="helpId" placeholder="Escribe el objeto">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="valor" aria-describedby="helpId" placeholder="Ingrece el valor">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="secretaria" aria-describedby="helpId" placeholder="Escribe su oficina">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="ano_de_contrato" aria-describedby="helpId" placeholder="Ingrece el año de contrato">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="cdp" aria-describedby="helpId" placeholder="Escribe el cdp">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="rp" aria-describedby="helpId" placeholder="Escribe el rp">          
+         
+         
+
+         <select  class="form-control" formControlName="id_persona">
+            <option>Selecionar persona</option>
+            <option *ngFor="let item of Listpersona" [value]="item.id_persona">
+              {{item.nombre}}
+              {{item.apellido}}
+            </option>
+          </select>
+          
+     </div>
+     <div class="btn-group" role="group" aria-label="">
+        <button type="submit" class="btn btn-success">Agregar</button>
+        <button type="button" routerLink="/list-contratos/" class="btn btn-primary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  

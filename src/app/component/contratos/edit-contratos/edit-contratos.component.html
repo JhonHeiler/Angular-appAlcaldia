@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+      Editar empleado
+    </div>
+    <div class="card-body">
+      <form ngNativeValidate [formGroup]="formContratos" (ngSubmit)="enviarDatos()">
+     <div class="mb-3">
+       <label for="" class="form-label">contratos</label>
+       <input required type="text"
+         class="form-control" name="" id="" formControlName="objeto" aria-describedby="helpId" placeholder="Escribe el objeto">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="valor" aria-describedby="helpId" placeholder="Ingrece el valor">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="secretaria" aria-describedby="helpId" placeholder="Escribe su oficina">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="ano_de_contrato" aria-describedby="helpId" placeholder="Ingrece el año de contrato">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="cdp" aria-describedby="helpId" placeholder="Escribe el cdp">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="rp" aria-describedby="helpId" placeholder="Escribe el rp">    
+         
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="id_persona" aria-describedby="helpId" >
+         
+        
+     </div>
+
+    <div class="btn-group" role="group" aria-label="">
+      <button type="submit" class="btn btn-warning">Modificar registro</button>
+      <button type="button" routerLink="/List-contratos/" class="btn btn-primary">Cancelar</button>
+    </div>
+    </form>
+  </div>
+ 
+  

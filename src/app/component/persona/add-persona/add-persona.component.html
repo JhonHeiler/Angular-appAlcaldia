@@ -1,0 +1,68 @@
+<div class="card">
+    <div class="card-header">
+      Registrar persona
+    </div>
+    <div class="card-body">
+      <form ngNativeValidate [formGroup]="formpersona" (ngSubmit)="enviarDatos()">
+     <div class="mb-3">
+       <label for="" class="form-label">persona</label>
+       <input required type="text"
+         class="form-control" name="" id="" formControlName="documento" aria-describedby="helpId" placeholder="Ingrese un nombre">
+
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="nombre" aria-describedby="helpId" placeholder="Ingrece la descripcion">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="apellido" aria-describedby="helpId" placeholder="escriba la ruta de ruta_almacenamiento">
+         <input required type="date"
+         class="form-control" name="" id="" formControlName="sexo" aria-describedby="helpId" placeholder="Ingrece el año de contrato">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="telefono" aria-describedby="helpId" placeholder="Escribe el cdp">
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="correo" aria-describedby="helpId" placeholder="Escribe el cdp">
+       
+         <select  class="form-control" formControlName="id_cargo">
+            <option>Selecionar actividades de contrato</option>
+            <option *ngFor="let item of listCargo" [value]="item.id_cargo">
+              {{item.nombre_actividad}}
+            </option>
+          </select>
+
+          
+         <select  class="form-control" formControlName="id_rol">
+            <option>Selecionar Prueba</option>
+            <option *ngFor="let item of listRol" [value]="item.id_rol">
+              {{item.prueba}}
+
+            </option>
+          </select>
+
+            
+         <select  class="form-control" formControlName="id_carga_persona">
+            <option>Selecionar persona carga</option>
+            <option *ngFor="let item of ListPersonaCarga" [value]="item.id_carga_persona">
+              {{item.carga}}
+            </option>
+          </select>
+
+
+            
+         <select  class="form-control" formControlName="id_tipo_documento">
+            <option>Selecionar persona carga</option>
+            <option *ngFor="let item of ListTipoDcoumento" [value]="item.id_tipo_documento">
+              {{item.carga}}
+            </option>
+          </select>
+
+          <input required type="text"
+         class="form-control" name="" id="" formControlName="password" aria-describedby="helpId" placeholder="Escribe el cdp">
+       
+          
+          
+     </div>
+     <div class="btn-group" role="group" aria-label="">
+        <button type="submit" class="btn btn-success">Agregar</button>
+        <button type="button" routerLink="/list-persona/" class="btn btn-primary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+  
+     <a *ngIf="puedeCrear"  class="btn btn-success" routerLink="/add-oficina/">Agregar nuevo oficina</a>
+    </div>
+    <div class="card-body">
+      <h2>Lista oficinas 🤗</h2>
+      <table class="table" id="season-tble">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Codigo de secretaria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let oficina of oficinas; let iControl=index">
+            <td>{{oficina.id_oficina}}</td>
+            <td>{{oficina.nombre}}</td>
+            <td>{{oficina.id_secretaria}}</td>
+            <td>
+               <a *ngIf="puedeModificar"  class="btn btn-info" routerLink="/edit-oficina/{{oficina.id_oficina}}">Editar</a>
+              <a *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deleteoficina(oficina.id_oficina,iControl)" role="button">Borrar</a> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  </div>
+  

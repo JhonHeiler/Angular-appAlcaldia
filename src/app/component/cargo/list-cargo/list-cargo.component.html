@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-cargo/"
+      >Agregar nuevo cargo</a
+    >
+  </div>
+  <div class="card-body">
+    <h2>Lista Cargos 😃</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Cargo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cargo of Cargos; let iControl = index">
+          <td>{{ cargo.id_cargo }}</td>
+          <td>{{ cargo.cargo }}</td>
+          <td>
+            <a
+              *ngIf="puedeModificar"
+              class="btn btn-info"
+              routerLink="/edit-cargo/{{ cargo.id_cargo }}"
+              >Editar</a
+            >
+            <a
+              *ngIf="puedeEliminar"
+              class="btn btn-danger"
+              (click)="deleteCargo(cargo.id_cargo, iControl)"
+              role="button"
+              >Borrar</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

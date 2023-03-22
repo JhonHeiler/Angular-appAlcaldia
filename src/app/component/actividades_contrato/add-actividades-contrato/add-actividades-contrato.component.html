@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    Registrar actividades contrato
+  </div>
+  <div class="card-body">
+    <form ngNativeValidate [formGroup]="formactividades_contrato" (ngSubmit)="enviarDatos()">
+   <div class="mb-3">
+     <label for="" class="form-label">actividades contrato</label>
+    
+        <select  class="form-control" formControlName="id_contratos">
+          <option>Selecionar actividades contrato</option>
+          <option *ngFor="let item of Listcontratos" [value]="item.id_contratos">
+            {{item.objeto}}
+          </option>
+        </select>
+
+        <input required type="text"
+        class="form-control" name="" id="" formControlName="indicador_de_resultado" aria-describedby="helpId" placeholder="Escribe el indicador_de_resultado">
+        <input required type="text"
+        class="form-control" name="" id="" formControlName="nombre_actividad" aria-describedby="helpId" placeholder="Escribe el nombre_actividad">
+       
+   </div>
+   <div class="btn-group" role="group" aria-label="">
+      <button type="submit" class="btn btn-success">Agregar</button>
+      <button type="button" routerLink="/List-actividades_contrato/" class="btn btn-primary">Cancelar</button>
+    </div>
+  </form>
+</div>

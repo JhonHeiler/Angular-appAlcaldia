@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header">
+  
+     <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-funcionario/">Agregar nuevo funcionario</a>
+    </div>
+    <div class="card-body">
+      <h2>Lista funcionario 🤠</h2>
+      <table class="table" id="season-tble">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Año</th>
+            <th>Codigo de la persona</th>
+            <th>Codigo de rol </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let funcionario of funcionarios; let iControl=index">
+            <td>{{funcionario.id_funcionario}}</td>
+            <td>{{funcionario.ano}}</td>
+            <td>{{funcionario.id_persona}}</td>
+            <td>{{funcionario.id_cargo}}</td>
+            <td>
+               <a *ngIf="puedeModificar" class="btn btn-info" routerLink="/Edit-funcionario/{{funcionario.id_funcionario}}">Editar</a>
+              <a  *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletefuncionario(funcionario.id_funcionario,iControl)" role="button">Borrar</a> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  </div>
+  

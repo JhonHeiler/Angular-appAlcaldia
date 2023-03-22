@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+
+   <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-tipo_documento/">Agregar nuevo Tipo documento</a>
+  </div>
+  <div class="card-body">
+    <h2>Lista Tipo documentos 🤗</h2>
+    <table class="table" id="season-tble">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Tipo documento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tipo_documento of tipo_documentos; let iControl=index">
+          <td>{{tipo_documento.id_tipo_documento}}</td>
+          <td>{{tipo_documento.tipo_documento}}</td>
+          <td>
+            <a *ngIf="puedeModificar" class="btn btn-info" routerLink="/edit-tipo_documento/{{tipo_documento.id_tipo_documento}}">Editar</a>
+            <a *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletetipo_documento(tipo_documento.id_tipo_documento,iControl)" role="button">Borrar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>
+
+<a  class="btn btn-info" (click)="exportToExcel()" >Exportar a excel</a>

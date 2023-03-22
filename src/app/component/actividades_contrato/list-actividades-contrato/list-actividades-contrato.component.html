@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header">
+
+   <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-actividades_contrato/">Agregar nuevo actividades contrato</a>
+  </div>
+  <div class="card-body">
+    <h2>Lista actividades contrato 🤩</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>contratos</th>
+          <th>indicador de resultado</th>
+          <th>nombre actividad</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of actividades_contratos; let iControl=index">
+          <td>{{item.id_actividades_contrato}}</td>
+          <td>{{item.id_contratos }}</td>
+          <td>{{item.indicador_de_resultado}}</td>
+          <td>{{item.nombre_actividad}}</td>
+          
+          <td>
+             <a *ngIf="puedeModificar" class="btn btn-info" routerLink="/Edit-actividades_contrato/{{item.id_actividades_contrato}}">Editar</a>
+            <a   *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deleteactividades_contrato(item.id_actividades_contrato,iControl)" role="button">Borrar</a> 
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>
+  

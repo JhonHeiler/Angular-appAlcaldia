@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-header">
+
+     <a  *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-persona/">Agregar nuevo persona</a>
+    </div>
+    <div class="card-body">
+      <h2>Lista persona 🧐</h2>
+      <table class="table" id="season-tble" >
+      
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>nombre</th>
+            <th>descripcion</th>
+            <th>ruta de almacenamiento </th>
+            <th>fecha de cargue</th>
+            <th>estado</th>
+            <th>Codigo</th>
+            <th>Codigo </th>
+            <th>Codigo </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let persona of personas; let iControl=index">
+            <td>{{persona.id_persona}}</td>
+            <td>{{persona.documento}}</td>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.sexo}}</td>
+            <td>{{persona.telefono}}</td>
+            <td>{{persona.correo}}</td>
+            <td>{{persona.id_rol}}</td>
+            <td>{{persona.id_carga_persona}}</td>
+            <td>{{persona.id_tipo_documento}}</td>
+            <td>{{persona.password}}</td>
+            <td>
+               <a  *ngIf="puedeModificar" class="btn btn-info" routerLink="/edit-persona/{{persona.id_persona}}">Editar</a>
+              <a  *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletepersona(persona.id_persona,iControl)" role="button">Borrar</a> 
+            </td>
+          </tr>
+          
+        </tbody>
+        
+      </table>
+      
+  
+  </div>
+  <a  class="btn btn-info" (click)="exportToExcel()" >Exportar a excel</a>

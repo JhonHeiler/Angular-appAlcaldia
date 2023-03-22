@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">
+      Registrar cargo
+    </div>
+    <div class="card-body">
+      <form ngNativeValidate [formGroup]="formCargo" (ngSubmit)="enviarDatos()">
+     <div class="mb-3">
+       <label for="" class="form-label">Cargo</label>
+       <input required type="text"
+         class="form-control" name="" id="" formControlName="cargo" aria-describedby="helpId" placeholder="Escribe tu nombre">
+     </div>
+     <div class="btn-group" role="group" aria-label="">
+        <button type="submit" class="btn btn-success">Agregar</button>
+        <button type="button" routerLink="/list-employee/" class="btn btn-primary">Cancelar</button>
+      </div>
+    </form>
+  </div>

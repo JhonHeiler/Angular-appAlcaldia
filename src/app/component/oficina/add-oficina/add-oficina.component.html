@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header">
+      Registrar oficina
+    </div>
+    <div class="card-body">
+      <form ngNativeValidate [formGroup]="formoficina" (ngSubmit)="enviarDatos()">
+     <div class="mb-3">
+       <label for="" class="form-label">oficina</label>
+       <input required type="text"
+         class="form-control" name="" id="" formControlName="nombre" aria-describedby="helpId" placeholder="Escribe nombre de la oficina">
+          <select  class="form-control" formControlName="id_secretaria">
+            <option>Selecionar</option>
+            <option *ngFor="let item of listsecretaria" [ngValue]="item.id_secretaria">
+              {{item.nombre}}
+            </option>
+          </select>
+     </div>
+     <div class="btn-group" role="group" aria-label="">
+        <button type="submit" class="btn btn-success">Agregar</button>
+        <button type="button" routerLink="/List-oficina/" class="btn btn-primary">Cancelar</button>
+      </div>
+    </form>
+  </div>

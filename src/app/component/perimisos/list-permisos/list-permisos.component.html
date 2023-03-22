@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+  
+     <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-permisos/">Agregar nuevo permisos</a>
+    </div>
+    <div class="card-body">
+      <h2>Lista permisos 😏</h2>
+      <table class="table" id="season-tble">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Codigo de la persona</th>
+            <th>Codigo del rol </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let permisos of permisoss; let iControl=index">
+            <td>{{permisos.id_permisos}}</td>
+            <td>{{permisos.id_persona}}</td>
+            <td>{{permisos.id_rol}}</td>
+            <td>
+               <a *ngIf="puedeModificar" class="btn btn-info" routerLink="/edit-permisos/{{permisos.id_permisos}}">Editar</a>
+              <a *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletepermisos(permisos.id_permisos,iControl)" role="button">Borrar</a> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  </div>
+  <a  class="btn btn-info" (click)="exportToExcel()" >Exportar a excel</a>

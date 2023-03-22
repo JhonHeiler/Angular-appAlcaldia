@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-header">
+    Registrar Evidencia
+  </div>
+  <div class="card-body">
+    <form ngNativeValidate [formGroup]="formevidencia" (ngSubmit)="enviarDatos()">
+   <div class="mb-3">
+     <label for="" class="form-label">Evidencia</label>
+     <input required type="text"
+       class="form-control" name="" id="" formControlName="nombre" aria-describedby="helpId" placeholder="Ingrese un nombre de la Actividad">
+       <!-- <h1 class="for">objeto</h1> -->
+       <input required type="text"
+       class="form-control" name="" id="" formControlName="descripcion" aria-describedby="helpId" placeholder="Ingrece la descripcion">
+       <input required type="file"
+       class="form-control" name="" id="" (change)="seledImage($event)" aria-describedby="helpId" placeholder="Ingrece la imagen">
+       <input required type="date"
+       class="form-control" name="" id="" formControlName="fecha_cargue" aria-describedby="helpId" placeholder="Ingrece el año de contrato">
+       <input required type="text"
+       class="form-control" name="" id="" formControlName="estado" aria-describedby="helpId" placeholder="Escribe el cdp">
+       
+
+       <select  class="form-select" formControlName="id_actividades_contrato">
+          <option selected>Selecionar actividades de contrato</option>
+          <option *ngFor="let item of listActividadContrato" [value]="item.id_actividades_contrato">
+            {{item.nombre_actividad}}
+          </option>
+        </select>
+
+        
+       <select  class="form-select" formControlName="id_prueba">
+          <option selected>Selecionar Prueba</option>
+          <option *ngFor="let item of listPrueba" [value]="item.id_prueba">
+            {{item.prueba}}
+
+          </option>
+        </select>
+
+          
+       <select  class="form-select" formControlName="id_persona_carga">
+          <option selected>Selecionar persona carga</option>
+          <option *ngFor="let item of ListPersonaCarga" [value]="item.id_persona_carga">
+            {{item.carga}}
+          </option>
+        </select>
+        
+   </div>
+   <div class="btn-group" role="group" aria-label="">
+      <button type="submit" class="btn btn-success">Agregar</button>
+      <button type="button" routerLink="/List-evidencia/" class="btn btn-primary">Cancelar</button>
+    </div>
+  </form>
+</div>

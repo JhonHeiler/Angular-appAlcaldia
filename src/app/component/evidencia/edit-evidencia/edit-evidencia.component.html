@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-header">
+      Editar empleado
+    </div>
+    <div class="card-body">
+      <form ngNativeValidate [formGroup]="formevidencia" (ngSubmit)="enviarDatos()">
+     <div class="mb-3">
+       <label for="" class="form-label">evidencia</label>
+       <input required type="text"
+         class="form-control" name="" id="" formControlName="nombre" aria-describedby="helpId" >
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="descripcion" aria-describedby="helpId" >
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="ruta_almacenamiento" aria-describedby="helpId" >
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="fecha_cargue" aria-describedby="helpId" >
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="estado" aria-describedby="helpId" >
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="id_actividades_contrato" aria-describedby="helpId" >
+
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="id_prueba" aria-describedby="helpId" >
+         <input required type="text"
+         class="form-control" name="" id="" formControlName="id_persona_carga" aria-describedby="helpId" >
+     </div>
+    <div class="btn-group" role="group" aria-label="">
+      <button type="submit" class="btn btn-warning">Modificar registro</button>
+      <button type="button" routerLink="/list-evidencia" class="btn btn-primary">Cancelar</button>
+    </div>
+    </form>
+  </div>
+ 
+  

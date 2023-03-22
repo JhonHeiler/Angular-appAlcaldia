@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-header">
+
+    <a *ngIf="puedeCrear" class="btn btn-success" routerLink="/add-evidencia/">Agregar nuevo evidencia</a>
+  </div>
+  <div class="card-body">
+    <h2>LISTA EVIDENCIA 🧐</h2>
+    <table class="table" id="season-tble">
+      <thead>
+        <tr>
+          <th>CODIGO</th>
+          <th>NOMBRE</th>
+          <th>DESCRIPCION</th>
+          <th>IMAGEN</th>
+          <th>.</th>
+          <th>FECHA DE CARGUE</th>
+          <th>ESTADO</th>
+          <th>CODIGO</th>
+          <th>CODIGO</th>
+          <th>CODIGO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let evidencia of evidencias; let iControl=index">
+          <td>{{evidencia.id_evidencia}}</td>
+          <td>{{evidencia.nombre}}</td>
+          <td>{{evidencia.descripcion}}</td>
+          <td>
+            <img height="100" width="100"
+              [src]="'http://localhost:8090/images/'+evidencia.imagen"
+              alt="">
+          </td>
+          <td>{{evidencia.ruta_almacenamiento}}</td>
+          <td>{{evidencia.fecha_cargue}}</td>
+          <td>{{evidencia.estado}}</td>
+          <td>{{evidencia.id_actividades_contrato}}</td>
+          <td>{{evidencia.id_prueba}}</td>
+          <td>{{evidencia.id_persona_carga}}</td>
+          <td>
+            <a *ngIf="puedeModificar" class="btn btn-info"
+              routerLink="/edit-evidencia/{{evidencia.id_evidencia}}">Editar</a>
+            <a *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deleteevidencia(evidencia.id_evidencia,iControl)"
+              role="button">Borrar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <a class="btn btn-info" (click)="exportToExcel()">Exportar a excel</a>
+
+  <a class="btn btn-secondary" (click)="createPDF()">Exportar a PDF</a>

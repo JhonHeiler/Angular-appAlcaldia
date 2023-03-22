@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-header">
+      Editar empleado
+    </div>
+    <div class="card-body">
+      <form ngNativeValidate [formGroup]="formcategoria" (ngSubmit)="enviarDatos()">
+     <div class="mb-3">
+       <label for="" class="form-label">categoria</label>
+       <input required type="text"
+         class="form-control" name="" id="" formControlName="categoria" aria-describedby="helpId">
+     </div>
+
+    <div class="btn-group" role="group" aria-label="">
+      <button type="submit" class="btn btn-warning">Modificar registro</button>
+      <button type="button" routerLink="/list-categoria/" class="btn btn-primary">Cancelar</button>
+    </div>
+    </form>
+  </div>
+  
+  

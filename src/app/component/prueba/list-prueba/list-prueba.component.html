@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">
+  
+     <a *ngIf="puedeCrear"  class="btn btn-success" routerLink="/add-prueba/">Agregar nueva Prueba</a>
+    </div>
+    <div class="card-body">
+      <h2>Lista Prueba 🤔</h2>
+      <table class="table" id="season-tble">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Prueba</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prueba of prueba; let iControl=index">
+            <td>{{prueba.id_prueba}}</td>
+            <td>{{prueba.prueba}}</td>
+            <td>
+              <a  *ngIf="puedeModificar" class="btn btn-info" routerLink="/edit-prueba/{{prueba.id_prueba}}">Editar</a>
+              <a *ngIf="puedeEliminar" class="btn btn-danger" (click)=" deletePrueba(prueba.id_prueba,iControl)" role="button">Borrar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  </div>
+  <a  class="btn btn-info" (click)="exportToExcel()" >Exportar a excel</a>

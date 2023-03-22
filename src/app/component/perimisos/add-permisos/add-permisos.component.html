@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header">
+      Registrar permisos
+    </div>
+    <div class="card-body">
+      <form ngNativeValidate [formGroup]="formpermisos" (ngSubmit)="enviarDatos()">
+     <div class="mb-3">
+       <label for="" class="form-label">permisos</label>
+         <select  class="form-control" formControlName="id_persona">
+            <option>Selecionar personas</option>
+            <option *ngFor="let itemPersona of listPesonas" [ngValue]="itemPersona.id_persona">
+              {{itemPersona.id_persona}}
+            </option>
+          </select>
+          
+          <select  class="form-control" formControlName="id_rol">
+            <option>Selecionar roles</option>
+            <option *ngFor="let itemRoles of listRoles" [ngValue]="itemRoles.id_rol">
+              {{itemRoles.id_rol}}
+            </option>
+          </select>
+
+          
+
+     </div>
+     <div class="btn-group" role="group" aria-label="">
+        <button type="submit" class="btn btn-success">Agregar</button>
+        <button type="button" routerLink="/List-permisos/" class="btn btn-primary">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  
